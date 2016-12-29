@@ -149,9 +149,10 @@ task :deploy => :build do |t, args|
     exit if ans != 'Y'
   end
 
+  time = Time.new
+
   %x{git add -A && git commit -m "autopush by Rakefile at #{time}" && git push origin gh_pages} if $git_autopush
 
-  time = Time.new
   File.open("_last_deploy.txt", 'w') {|f| f.write(time) }
 end
 

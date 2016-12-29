@@ -2,7 +2,7 @@
 layout: post
 title:  "[Line Login] Integrate Line Login with Rails 4"
 date:   2016-10-06 12:38:52 +0800
-categories: line rails4
+categories: rails4
 ---
 
 Recently I got a task to create a website with Line Login feature. This feature allows users to login with their Line account to 3rd party websites by using OAuth2.0.
