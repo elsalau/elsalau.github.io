@@ -2,3 +2,6 @@ _site
 .sass-cache
 .jekyll-metadata
 .versions.conf
+_last_deploy.txt
+_config_deploy.yml
+_rake-configuration.rb
