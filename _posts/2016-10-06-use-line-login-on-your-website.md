@@ -2,7 +2,7 @@
 layout: post
 title:  "[Line Login] Integrate Line Login with Rails 4"
 date:   2016-10-06 12:38:52 +0800
-categories: line, rails4
+categories: line rails4
 ---
 
 Recently I got a task to create a website with Line Login feature. This feature allows users to login with their Line account to 3rd party websites by using OAuth2.0.
@@ -12,7 +12,7 @@ After user login and grant priveleges to 3rd party website, Line will provide fo
 1. User's nickname
 2. User's ID
 3. User's profile image URL
-4. User's statue message 
+4. User's statue message
 
 ```
 {
@@ -36,7 +36,7 @@ and the pictureUrl supports 2 sizes:
 
 1. Create a business account at the Business Center
 2. Select LINE Login on your business account page
-3. Create a Channel 
+3. Create a Channel
 4. Integrate LINE’s user authentication process into website
 5. Use REST APIs from website
 6. Test website
@@ -58,11 +58,11 @@ how I implemented it with Rails 4
 
 - Pages controller
   - index action
-    - render view 
+    - render view
 
 - Sessions controller
   - create action
-      - login 
+      - login
       - Uses Omniauth to get user data from Line
   - destroy action
       - logout
@@ -86,8 +86,8 @@ how I implemented it with Rails 4
   {% highlight bash %}
   $gem install omniauth-line
   {% endhighlight %}
-  
-- Configure provider infomation 
+
+- Configure provider infomation
   {% highlight ruby %}
   #config/initializers/omniauth.rb
   Rails.application.config.middleware.use OmniAuth::Builder do
@@ -97,7 +97,7 @@ how I implemented it with Rails 4
     SessionsController.action(:action_failure).call(env)
   end
   {% endhighlight %}
-  
+
 - Configure routes for callback and logout
   {% highlight ruby %}
   Rails.application.routes.draw do
@@ -106,7 +106,7 @@ how I implemented it with Rails 4
     delete '/logout', to: 'sessions#destroy'
   end
   {% endhighlight %}
-  
+
 - Configure Sessions Controller for create, destroy action
   {% highlight ruby %}
   def create

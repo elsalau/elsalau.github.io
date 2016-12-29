@@ -26,4 +26,4 @@ github_username:  elsalau
 markdown: kramdown
 theme: minima
 
-exclude: [download.md, design.md, science.md, _posts/2016-03-30*, _posts/2016-10-06-welcome-to-jekyll.markdown ]
+exclude: [Rakefile]

@@ -1,0 +1,6 @@
+# put here any directive needed only when deploying
+# a special deploy_dir variable specifies the deployment location using rsync
+
+baseurl: http://elsalau.github.io
+deploy_dir: git@github.com:elsalau/elsalau.github.io.git
+
