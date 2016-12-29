@@ -1,13 +1,16 @@
 ---
 layout: page
+title: Walkr
+permalink: /walkr/
 ---
 
-<div class="home">
+<div class="rails">
 
-  <h1 class="page-heading">Posts</h1>
+  <h1 class="page-heading">Walkr</h1>
 
   <ul class="post-list">
     {% for post in site.posts %}
+      {% if post.categories contains "walkr" %}
       <li>
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
@@ -15,6 +18,7 @@ layout: page
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
         </h2>
       </li>
+      {% endif %}
     {% endfor %}
   </ul>
 

@@ -159,10 +159,10 @@ end
 desc 'Create a post'
 # Rename task - Elsa @ 2016-12-29
 # task :create_post, [:date, :title, :category, :content] do |t, args|
-task :post, [:date, :title, :category, :content] do |t, args|
+task :post, [:date, :title, :category, :tags, :content] do |t, args|
   if args.title == nil then
     puts "Error! title is empty"
-    puts "Usage: create_post[date,title,category,content]"
+    puts "Usage: create_post[date,title,category,tags,content]"
     puts "DATE and CATEGORY are optional"
     puts "DATE is in the form: YYYY-MM-DD; use nil or empty for today's date"
     puts "CATEGORY is a string; nil or empty for no category"
@@ -225,6 +225,8 @@ task :post, [:date, :title, :category, :content] do |t, args|
       f.puts "title:  \"#{post_title}\""
       f.puts yaml_cat if yaml_cat != nil
       f.puts "date:  #{post_date}"
+      f.puts "category: #{post_category}"
+      f.puts "tags: [#{args.tags}]" if args.tags != nil
       f.puts "---"
       f.puts args.content if args.content != nil
     end
